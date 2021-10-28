@@ -1,13 +1,5 @@
 import {port, env} from './config/environment';
-import app from './app';
+import {startApolloServer} from "./graphql";
+import schema from "./graphql/schema";
 
-const start = async () => {
-    try {
-        await app.listen(port);
-        console.log("🚀  GraphQL server running at port: ${port}");
-    } catch {
-        console.log('Not able to run GraphQL server');
-    }
-};
-
-start().then(r => null);
+startApolloServer(schema, null, port).then(r => null);

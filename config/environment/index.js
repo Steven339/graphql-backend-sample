@@ -12,4 +12,4 @@ const env = {
     production: process.env.NODE_ENV === 'production',
 };
 
-export { port, env };
+export {port, env};
